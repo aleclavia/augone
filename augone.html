@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Girlfriend's Day, Ainain 💛💗</title>
+<style>
+  :root{
+    --yellow: #ffd93d;
+    --yellow-light: #fff4c4;
+    --pink: #ff8fb1;
+    --pink-deep: #ff5c8d;
+    --pink-light: #ffe1ec;
+    --cream: #fffaf0;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+    background: linear-gradient(180deg, var(--pink-light), var(--yellow-light));
+    overflow-x: hidden;
+  }
+
+  body.locked{
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ---------- HERO ---------- */
+  #hero{
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, #1b0d24 0%, #0a0512 70%, #000 100%);
+    z-index: 999;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease;
+  }
+
+  #hero canvas{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  #hero-text{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--yellow-light);
+    text-shadow: 0 0 20px var(--pink), 0 0 40px var(--yellow);
+    padding: 20px;
+    pointer-events: none;
+  }
+
+  #hero-text h1{
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  #hero-text p{
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    opacity: 0.85;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes glow{
+    from{ text-shadow: 0 0 15px var(--pink), 0 0 30px var(--yellow); }
+    to{ text-shadow: 0 0 30px var(--pink-deep), 0 0 60px var(--yellow); }
+  }
+
+  @keyframes pulse{
+    0%, 100%{ opacity: 0.5; }
+    50%{ opacity: 1; }
+  }
+
+  #hero.fade-out{
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ---------- MAIN PAGE ---------- */
+  #main{
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .decor-layer{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .butterfly{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    animation: flutter linear infinite;
+    opacity: 0.85;
+  }
+
+  .butterfly svg{
+    width: 100%;
+    height: 100%;
+    animation: flap 0.4s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+
+  @keyframes flap{
+    from{ transform: scaleX(1); }
+    to{ transform: scaleX(0.7); }
+  }
+
+  @keyframes flutter{
+    0%{ transform: translate(0, 0) rotate(0deg); }
+    25%{ transform: translate(40px, -60px) rotate(10deg); }
+    50%{ transform: translate(-30px, -120px) rotate(-8deg); }
+    75%{ transform: translate(50px, -180px) rotate(6deg); }
+    100%{ transform: translate(-20px, -240px) rotate(0deg); }
+  }
+
+  .rabbit-decor{
+    position: absolute;
+    width: 90px;
+    opacity: 0.9;
+  }
+
+  header.title-block{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 70px 20px 40px 20px;
+  }
+
+  header.title-block h1{
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    color: var(--pink-deep);
+    margin: 0;
+    text-shadow: 2px 2px 0 var(--yellow);
+  }
+
+  header.title-block .sub{
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    color: #b3006b;
+    margin-top: 10px;
+  }
+
+  .rabbit-hero{
+    width: 130px;
+    margin: 10px auto 0 auto;
+    display: block;
+    animation: bounce 2.2s ease-in-out infinite;
+  }
+
+  @keyframes bounce{
+    0%, 100%{ transform: translateY(0); }
+    50%{ transform: translateY(-14px); }
+  }
+
+  .letter{
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 30px 80px 30px;
+  }
+
+  .letter p{
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.6;
+    color: #6b1240;
+    background: rgba(255,255,255,0.55);
+    padding: 20px 26px;
+    border-radius: 24px;
+    margin: 30px 0;
+    box-shadow: 0 8px 20px rgba(255, 140, 180, 0.25);
+    border: 3px dashed var(--pink);
+  }
+
+  .letter p.highlight{
+    background: linear-gradient(135deg, var(--yellow-light), var(--pink-light));
+    border: 3px solid var(--pink-deep);
+    font-weight: bold;
+    color: #a3005c;
+  }
+
+  .letter .filipino{
+    font-style: italic;
+  }
+
+  .letter .caps{
+    color: var(--pink-deep);
+  }
+
+  .divider{
+    text-align: center;
+    font-size: 2rem;
+    margin: 40px 0;
+    color: var(--pink);
+  }
+
+  footer{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 50px 20px 60px 20px;
+    background: linear-gradient(180deg, transparent, var(--pink));
+    color: #6b0038;
+  }
+
+  footer .by{
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: bold;
+    margin: 0;
+  }
+
+  footer .to{
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    margin: 10px 0 0 0;
+  }
+
+  footer .heart{
+    font-size: 2rem;
+    margin-top: 10px;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+</style>
+</head>
+<body class="locked">
+
+<!-- ================= HERO ================= -->
+<div id="hero">
+  <canvas id="fireworks-canvas"></canvas>
+  <div id="hero-text">
+    <h1>Happy Girlfriend's Day 💛💗</h1>
+    <p>(click anywhere to open your letter)</p>
+  </div>
+</div>
+
+<!-- ================= MAIN PAGE ================= -->
+<div id="main">
+
+  <div class="decor-layer" id="decorLayer"></div>
+
+  <header class="title-block">
+    <h1>To My Ainain 🐰🦋</h1>
+    <div class="sub">Happy Girlfriend's Day, My Baby</div>
+    <svg class="rabbit-hero" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="65" rx="28" ry="22" fill="#fff4c4" stroke="#ff8fb1" stroke-width="2"/>
+      <ellipse cx="35" cy="30" rx="7" ry="20" fill="#fff4c4" stroke="#ff8fb1" stroke-width="2"/>
+      <ellipse cx="55" cy="30" rx="7" ry="20" fill="#fff4c4" stroke="#ff8fb1" stroke-width="2"/>
+      <ellipse cx="35" cy="32" rx="3" ry="12" fill="#ff8fb1"/>
+      <ellipse cx="55" cy="32" rx="3" ry="12" fill="#ff8fb1"/>
+      <circle cx="42" cy="60" r="3" fill="#6b1240"/>
+      <circle cx="58" cy="60" r="3" fill="#6b1240"/>
+      <ellipse cx="50" cy="68" rx="4" ry="3" fill="#ff5c8d"/>
+      <circle cx="30" cy="66" r="5" fill="#ffd1e0" opacity="0.7"/>
+      <circle cx="70" cy="66" r="5" fill="#ffd1e0" opacity="0.7"/>
+    </svg>
+  </header>
+
+  <div class="letter">
+
+    <p>Hi, hon!!! it's been a wild ride for our relationshippppp LIIIIIKEEEE FR FR FR so wild and so much of a roller coaster!!!!!! This isn't how I typically write things but you deserve all the energy poured out into a letter (or message, ikaw bahala).</p>
+
+    <p>Will first start to say that I very much appreciate you <span class="filipino">sa pag-titiis sa'kin kahit sobrang sakit ko na sa ulo</span> A LOT OF TIMES. Pero seryoso, it's my most genuine state, like <span class="filipino">nagt-turn off talaga utak ko kapag kasama ka</span> pero at the same time I really really try to be the most delicate and careful person when I'm with you because I know you need it (and I want to☺️☺️☺️). Taking care of you just feels so natural and innate for me.</p>
+
+    <p><span class="filipino">Sobrang kulang at lungkot ng araw ko kapag hindi ka nakikita at naaalagaan.</span> So know this, I am very sorry for the moments where I'm not there taking care of you when I should be. Trust me, that's when I'm most disappointed with myself kasi I know that's when you need me the most and that's when I can't even do anything to make you feel better. <span class="filipino">It's better kung kasama mo 'ko kahit medyo madalas wala pa rin naman akong naitutulong sa'yo lalo na kapag masakit puson mo.</span> My baby, I just want you to know that I am willing to <span class="filipino">'pokpok' your likod</span> for the rest of my life if that'll help you even for a little amount.</p>
+
+    <p class="highlight">I know that I can't officially call you my girlfriend when it's just the two of us but for me we are what the world knows about what we are. Just so you know, I'm not taking any part of our relationship for granted. I am waiting for the perfect timing for us to be officially each other's. <span class="filipino">Kahit naman walang tayo, it already feels like I'm building the best future we will both enjoy together.</span></p>
+
+    <div class="divider">💛 🐰 💗</div>
+
+    <p><span class="filipino">Alam mo ba, sobrang na-inlove ako sayo nung inalagan at napagaling mo 'ko in just one day.</span> Parang grabe, sobrang swerte ko naman sa wife ko. <span class="caps">PARANG GANONG FEELING E.</span> At alam na alam na alam kong hinding hindi ko kayang iwan ka kasi napakasarap mo— ay joke... napakasarap mong magluto. Everything that you can do fits perfectly to what I can't, you're what I want and need.</p>
+
+    <p class="highlight"><span class="caps">AND WAIT PAUSE, WHILE I'M WRITING THIS NAKITA KO NAKANGITI KA SA CELLPHONE MO WTH NAKAKAPANGHINA TALAGA</span></p>
+
+    <p>Sobrang inlove na inlove ako sa ngiti mo kahit ano pang rason niyan kaya gustong gusto kong patawanin, pangitiin ka, at pasayahin ka sa bawat hinga ko. Napakaganda kasi ng ngiti mo. <span class="caps">PLUS PLUS PLUS WHEN YOU SCRUNCH YOU NOSEEE YOU'RE SO CUUUTE.</span></p>
+
+    <p>Na off track tuloy, ikaw kasi e. ahhhhh you're the perfect wife. PERFECT LIFE PARTNER GANON. You're soft when the situation needs you to be, you're careful, you're tough when I need to be, and you're kind in every situation you are in. You always think what will be the best for you and what you want so that makes you human and that's one of the reasons why I love you, my dearest.</p>
+
+    <div class="divider">🦋 💗 🦋</div>
+
+    <p>I don't like it when you tease me about us breaking up.... pero what can I do, it makes you smile e, makikisakay na lang ako. I'm sorry for the bad feelings that I made you feel throughout our relationship, I promise to change, at ipaglalaban kita kahit kanina pa man yan.</p>
+
+    <p>You being outgoing is probably like the best bonus you have. <span class="caps">YOU ARE SO FUN TO BE WITH.</span> no dead air, no awk silence. <span class="caps">YOU KNOW WHAT'S HAPPENING AROUND YOU AND THAT'S LIKEEEEE SO FREAKING BEAUTIFUL.</span> You have your opinions (and it's the best ones out there). I love you my politically aware, baby.</p>
+
+    <p>YK WHATTTTT I really really wanna help you with your diet journey because I know the results will make you happy but I can't help itttttt.... Gusto ko lahat ng kinakain ko, kinakain mo rin LIKE SMH. PERO YK BABY you're the sexiest woman ever ever ever. Like no one can compare to you. EVERYTHING about you combined is what makes you the best person to be withhhhhh</p>
+
+    <p>Uhmmm I'm also gonna bring this up, I really appreciate you every night🥰, you're the best and I know you know that. YUMMMMMM</p>
+
+    <p class="highlight">SABI KO KASI SAYO E, I don't write these things kasi I can say this to your face, YOU ARE WORTH EVERY AFFIRMATION THERE IS.</p>
+
+    <p>You know that LITERALLY I can't breathe when you're not near. I love you with all my being, hon😁😁😁😁</p>
+
+    <div class="divider">💛 💗 🐰 🦋 💗 💛</div>
+
+    <p class="highlight" style="text-align:center; font-size: clamp(1.6rem, 4vw, 2.3rem);">HAPPY GIRLFRIEND'S DAY, MY BABY!!</p>
+
+  </div>
+
+  <footer>
+    <p class="by">By: Your AL</p>
+    <p class="to">For you and for you only, my ainain.</p>
+    <div class="heart">💛💗</div>
+  </footer>
+
+</div>
+
+<script>
+  // ---------------- FIREWORKS ----------------
+  const canvas = document.getElementById('fireworks-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  function resize(){
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const colors = ['#ffd93d', '#ff8fb1', '#ff5c8d', '#fff4c4', '#ffe1ec', '#ffb347'];
+
+  class Particle{
+    constructor(x, y, color){
+      this.x = x;
+      this.y = y;
+      this.color = color;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 5 + 1.5;
+      this.vx = Math.cos(angle) * speed;
+      this.vy = Math.sin(angle) * speed;
+      this.alpha = 1;
+      this.gravity = 0.05;
+      this.decay = Math.random() * 0.012 + 0.008;
+      this.radius = Math.random() * 2 + 1.5;
+    }
+    update(){
+      this.vy += this.gravity;
+      this.x += this.vx;
+      this.y += this.vy;
+      this.alpha -= this.decay;
+    }
+    draw(){
+      ctx.save();
+      ctx.globalAlpha = Math.max(this.alpha, 0);
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.shadowBlur = 12;
+      ctx.shadowColor = this.color;
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  let particles = [];
+  let fireworksRunning = true;
+
+  function launchFirework(){
+    if(!fireworksRunning) return;
+    const x = Math.random() * W * 0.8 + W * 0.1;
+    const y = Math.random() * H * 0.5 + H * 0.1;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const count = 60 + Math.floor(Math.random() * 40);
+    for(let i = 0; i < count; i++){
+      particles.push(new Particle(x, y, color));
+    }
+  }
+
+  function animateFireworks(){
+    if(!fireworksRunning){
+      ctx.clearRect(0, 0, W, H);
+      return;
+    }
+    ctx.fillStyle = 'rgba(10, 5, 18, 0.25)';
+    ctx.fillRect(0, 0, W, H);
+    particles.forEach(p => { p.update(); p.draw(); });
+    particles = particles.filter(p => p.alpha > 0);
+    requestAnimationFrame(animateFireworks);
+  }
+
+  let launchInterval = setInterval(launchFirework, 450);
+  animateFireworks();
+  launchFirework();
+
+  // ---------------- HERO DISMISS ----------------
+  const hero = document.getElementById('hero');
+  hero.addEventListener('click', () => {
+    fireworksRunning = false;
+    clearInterval(launchInterval);
+    hero.classList.add('fade-out');
+    document.body.classList.remove('locked');
+    setTimeout(() => {
+      hero.style.display = 'none';
+    }, 1000);
+  });
+
+  // ---------------- BUTTERFLIES & RABBITS DECOR ----------------
+  const decorLayer = document.getElementById('decorLayer');
+
+  const butterflySVG = (color1, color2) => `
+    <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M30 30 C10 5, -5 15, 10 30 C-5 45, 10 55, 30 30 Z" fill="${color1}" opacity="0.9"/>
+        <path d="M30 30 C50 5, 65 15, 50 30 C65 45, 50 55, 30 30 Z" fill="${color2}" opacity="0.9"/>
+        <line x1="30" y1="18" x2="30" y2="42" stroke="#6b1240" stroke-width="2"/>
+        <circle cx="30" cy="18" r="2" fill="#6b1240"/>
+      </g>
+    </svg>
+  `;
+
+  const rabbitSVG = `
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="65" rx="26" ry="20" fill="#fff4c4" stroke="#ff8fb1" stroke-width="2"/>
+      <ellipse cx="36" cy="32" rx="6" ry="18" fill="#fff4c4" stroke="#ff8fb1" stroke-width="2"/>
+      <ellipse cx="54" cy="32" rx="6" ry="18" fill="#fff4c4" stroke="#ff8fb1" stroke-width="2"/>
+      <circle cx="43" cy="60" r="2.5" fill="#6b1240"/>
+      <circle cx="57" cy="60" r="2.5" fill="#6b1240"/>
+      <ellipse cx="50" cy="67" rx="3" ry="2" fill="#ff5c8d"/>
+    </svg>
+  `;
+
+  const butterflyColors = [
+    ['#ffd93d', '#ff8fb1'],
+    ['#ff5c8d', '#fff4c4'],
+    ['#ffb347', '#ffe1ec'],
+    ['#ff8fb1', '#ffd93d']
+  ];
+
+  function spawnButterfly(){
+    const el = document.createElement('div');
+    el.className = 'butterfly';
+    const [c1, c2] = butterflyColors[Math.floor(Math.random() * butterflyColors.length)];
+    el.innerHTML = butterflySVG(c1, c2);
+    const size = 30 + Math.random() * 25;
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+    el.style.left = (Math.random() * 90) + 'vw';
+    el.style.top = (Math.random() * 100 + 100) + 'vh';
+    const duration = 12 + Math.random() * 10;
+    el.style.animationDuration = duration + 's';
+    decorLayer.appendChild(el);
+    setTimeout(() => el.remove(), duration * 1000);
+  }
+
+  for(let i = 0; i < 8; i++){
+    setTimeout(spawnButterfly, i * 900);
+  }
+  setInterval(spawnButterfly, 2600);
+
+  function placeRabbits(){
+    const positions = [
+      { top: '8vh', left: '2vw' },
+      { top: '40vh', left: '88vw' },
+      { top: '70vh', left: '4vw' },
+      { top: '95vh', left: '85vw' },
+      { top: '130vh', left: '3vw' },
+      { top: '160vh', left: '90vw' }
+    ];
+    positions.forEach((pos, i) => {
+      const el = document.createElement('div');
+      el.className = 'rabbit-decor';
+      el.innerHTML = rabbitSVG;
+      el.style.top = pos.top;
+      el.style.left = pos.left;
+      el.style.transform = `rotate(${(i % 2 === 0 ? -1 : 1) * (5 + i * 2)}deg)`;
+      decorLayer.appendChild(el);
+    });
+  }
+  placeRabbits();
+</script>
+
+</body>
+</html>
